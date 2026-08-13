@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.container {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;     
+  padding: 20px;
+  gap: 20px;
+  align-items: flex-start;
+  max-width: 1600px;
+  margin: 0 auto; 
+}
+
+
+.column-left {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 400px; 
+}
+
+.column-right {
+  flex: 1.5; 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 400px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%; 
+  padding: 24px;
+  box-sizing: border-box; 
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  color: #282c34;
+}
+
+/* --- Video Card Styles --- */
+.video-container {
+  width: 100%;
+  background-color: #000;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  line-height: 0; 
+}
+
+.video-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Controls Card Styles --- */
+.status-display {
+  font-size: 1.2em;
+  margin: 16px 0;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.control-button {
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: white;
+}
+
+/* Make status button span full width */
+.control-button.status {
+  grid-column: 1 / -1; 
+  background-color: #008CBA;
+}
+.control-button.status:hover {
+  background-color: #007ba7;
+}
+
+.control-button.open {
+  background-color: #4CAF50;
+}
+.control-button.open:hover {
+  background-color: #45a049;
+}
+
+.control-button.close {
+  background-color: #f44336;
+}
+.control-button.close:hover {
+  background-color: #e53935;
+}
+
+
+/* --- Log Card Styles --- */
+.log-card {
+  /* Set max-height relative to video and controls */
+  max-height: 80vh; 
+  padding: 0; 
+}
+
+.log-card h2 {
+  padding: 24px 24px 0 24px;
+  margin-bottom: 0;
+}
+
+.log-table-container {
+  max-height: 70vh; 
+  overflow-y: auto;
+  padding: 24px;
+  padding-top: 16px;
+}
+
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.log-table th, .log-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.log-table th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+  position: sticky; 
+  top: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.log-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.log-table .unauthorized {
+  color: #d9534f;
+  font-weight: 500;
+}
+
+.log-table .unauthorized td:first-child {
+  font-weight: bold;
+}
+
+.log-table .authorized {
+  color: #5cb85c;
+  font-weight: 500;
+}
+
+/* --- Responsive Layout for small screens --- */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .column-left, .column-right {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .card {
+    padding: 16px;
+  }
+  
+  .log-card {
+    max-height: 400px; 
+  }
+
+  .log-table-container {
+    max-height: 300px;
+  }
+}
+
